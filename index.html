@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinakka Micro sites</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, #1C0A24 0%, #3C0E2D 100%);
+        /* background-image: url(./images/hero.png); */
+        background-position: center;
+        background-size: cover;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+      }
+
+      .header::before {
+        /* content: ""; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="0,100 1000,0 1000,100"/></svg>');
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease;
+      }
+
+      .header p {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease 0.2s both;
+        text-align: center;
+      }
+
+      .brand-highlight {
+        color: #ffd700;
+        font-weight: 600;
+      }
+
+      /* Why Your Business Needs Section */
+      .why-section {
+        padding: 100px 0;
+        background: #3D0F41;
+        position: relative;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3d0f41, #764ba2);
+        border-radius: 2px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 40px 20px;
+        background: white;
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+        border-color: #3d0f41;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #3d0f41;
+        margin-bottom: 15px;
+      }
+
+      .stat-description {
+        font-size: 1.1rem;
+        color: #111111;
+        line-height: 1.6;
+      }
+
+      /* Our Approach Section */
+      .approach-section {
+        padding: 100px 0;
+        /* background: white; */
+        background-image: url(./images/experience_bg.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 50px;
+        margin-top: 80px;
+      }
+
+      .approach-item {
+        text-align: center;
+        padding: 30px 20px;
+        position: relative;
+      }
+
+      .approach-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #3d0f41, #764ba2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 2rem;
+        color: white;
+      }
+
+      .approach-number {
+        position: absolute;
+        top: -10px;
+        right: 20px;
+        background: #ffd700;
+        color: #333;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .approach-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 15px;
+      }
+
+      .approach-description {
+        color: #f8f4f4ac;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* What We Offer Section */
+      .offer-section {
+        padding: 100px 0;
+        /* background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); */
+        background-color: #150725;
+      }
+
+      .offer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-top: 80px;
+      }
+
+      .offer-item {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .offer-item:hover {
+        transform: translateY(-5px);
+        border-color: #3d0f41;
+      }
+
+      .offer-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #3d0f41, #764ba2);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        color: white;
+      }
+
+      .offer-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #111111;
+        margin-bottom: 15px;
+      }
+
+      .offer-description {
+        color: #111111;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Why Choose Section */
+      .choose-section {
+        padding: 100px 0;
+        background: #3D0F41;
+      }
+
+      .choose-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .choose-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #f8f4f4ac;
+        margin-bottom: 40px;
+      }
+
+      .features-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: #ffffff;
+        font-weight: 500;
+      }
+
+      .feature-item i {
+        color: #48bb78;
+        margin-right: 12px;
+        font-size: 1.1rem;
+      }
+
+      .choose-image {
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(135deg, #3d0f41, #764ba2);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 4rem;
+      }
+
+      /* Results Section */
+      .results-section {
+        padding: 100px 0;
+        /* background: linear-gradient(135deg, #ffffff 0%, #f8f4f4ac 100%); */
+        background-color: #3d0f41;
+        color: white;
+        text-align: center;
+      }
+
+      .results-section .section-title {
+        color: white;
+      }
+
+      .results-section .section-title::after {
+        background: #ffd700;
+      }
+
+      .results-text {
+        font-size: 1.3rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #3d0f41 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .cta-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+      }
+
+      .cta-text {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        opacity: 0.9;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: #ffd700;
+        color: #333;
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .choose-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .features-list {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-title {
+          font-size: 2.2rem;
+        }
+      }
+
+      .section-title-offer {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title-offer::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #3d0f41, #764ba2);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="header">
+      <div class="container">
+        <h1>
+          <i class="fas fa-globe"></i> Website Designing Services by
+          <span class="brand-highlight">Pinakkaa</span>
+        </h1>
+        <p>
+          Your website isn't just a page — it's your brand's
+          <strong>digital headquarters</strong>. At <strong>Pinakkaa</strong>, a
+          trusted <strong>digital marketing agency</strong>, we craft websites
+          that blend creativity, technology, and strategy to deliver results
+          that matter.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Your Business Needs -->
+    <section class="why-section">
+      <div class="container">
+        <h2 class="section-title " style="color: #ffffff;">
+          ✨ Why Your Business Needs a Powerful Website
+        </h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">94%</div>
+            <div class="stat-description">
+              of users judge a brand by its website design. First impressions
+              matter in the digital world.
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-description">
+              A well-designed website increases
+              <strong>trust, engagement, and conversions</strong> significantly.
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><i class="fas fa-rocket"></i></div>
+            <div class="stat-description">
+              Your website should be more than "good looking" — it should be a
+              <strong>growth engine</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="approach-section">
+      <div class="container">
+        <h2 class="section-title">🖌️ Our Approach to Website Designing</h2>
+        <p
+          style="
+            text-align: center;
+            font-size: 1.2rem;
+            color: #f8f4f4ac;
+            max-width: 800px;
+            margin: 0 auto;
+          "
+        >
+          At Pinakkaa, we don't just design websites. We
+          <strong>engineer digital experiences</strong>. Our process is built
+          on:
+        </p>
+
+        <div class="approach-grid">
+          <div class="approach-item">
+            <div class="approach-number">1</div>
+            <div class="approach-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h3 class="approach-title">Discovery & Strategy</h3>
+            <p class="approach-description">
+              Understanding your goals, audience, and brand voice to create a
+              solid foundation.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">2</div>
+            <div class="approach-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3 class="approach-title">Creative Design</h3>
+            <p class="approach-description">
+              Crafting stunning, user-friendly, and brand-consistent layouts
+              that captivate.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">3</div>
+            <div class="approach-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="approach-title">Seamless Development</h3>
+            <p class="approach-description">
+              Using modern, scalable, and secure technologies for optimal
+              performance.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">4</div>
+            <div class="approach-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="approach-title">Optimization & Launch</h3>
+            <p class="approach-description">
+              Ensuring speed, SEO readiness, and flawless performance before
+              going live.
+            </p>
+          </div>
+
+          <div class="approach-item">
+            <div class="approach-number">5</div>
+            <div class="approach-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="approach-title">Support & Growth</h3>
+            <p class="approach-description">
+              Continuous improvements to keep your site future-ready and
+              competitive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="offer-section">
+      <div class="container">
+        <h2 class="section-title-offer">⚡ What We Offer</h2>
+
+        <div class="offer-grid">
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="offer-title">Corporate Websites</h3>
+            <p class="offer-description">
+              Elevate your brand presence with professional, sophisticated
+              designs that establish credibility.
+            </p>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3 class="offer-title">E-Commerce Stores</h3>
+            <p class="offer-description">
+              Scalable, secure, and conversion-focused online stores that drive
+              sales and growth.
+            </p>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fas fa-mouse-pointer"></i>
+            </div>
+            <h3 class="offer-title">Landing Pages & Microsites</h3>
+            <p class="offer-description">
+              Built to capture leads instantly with compelling calls-to-action
+              and optimized conversion paths.
+            </p>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <h3 class="offer-title">Portfolio & Personal Websites</h3>
+            <p class="offer-description">
+              Showcase creativity with elegance through stunning visual
+              presentations and smooth user experiences.
+            </p>
+          </div>
+
+          <div class="offer-item">
+            <div class="offer-icon">
+              <i class="fas fa-sync-alt"></i>
+            </div>
+            <h3 class="offer-title">Redesign & UI/UX</h3>
+            <p class="offer-description">
+              Upgrade your existing website for better impact, improved user
+              experience, and higher conversions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Pinakkaa -->
+    <section class="choose-section">
+      <div class="container">
+        <h2 class="section-title">🚀 Why Choose Pinakkaa?</h2>
+
+        <div class="choose-content">
+          <div>
+            <p class="choose-text">
+              As a full-service <strong>digital marketing agency</strong>,
+              Pinakkaa combines design expertise with marketing intelligence.
+              That means every website we create is not just a digital showcase,
+              but also a <strong>sales-driving machine</strong>.
+            </p>
+
+            <div class="features-list">
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                100% Responsive & Mobile-First
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                SEO-Optimized from Day One
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Secure, Scalable & Fast Loading
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Designed for Conversions & ROI
+              </div>
+            </div>
+          </div>
+
+          <div class="choose-image">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Designed to Deliver Results -->
+    <section class="results-section">
+      <div class="container">
+        <h2 class="section-title">📈 Designed to Deliver Results</h2>
+        <p class="results-text">
+          Our websites are crafted with one goal:
+          <strong>to grow your business online</strong>. Whether you're a
+          startup, SME, or enterprise, we ensure your site works as your most
+          valuable digital asset, driving engagement, leads, and revenue
+          consistently.
+        </p>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">📞 Let's Build Your Website Today</h2>
+        <p class="cta-text">
+          Looking for a website that's modern, engaging, and built to perform?
+          Partner with <strong>Pinakkaa</strong> — where design meets digital
+          growth.
+        </p>
+        <a href="#contact" class="cta-button">👉 Get in Touch Today</a>
+      </div>
+    </section>
+  </body>
+</html>
