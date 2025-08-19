@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DISPLAY ADS</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #ffffff;
+        background: #3d0f41;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(
+          135deg,
+          #3d0f41 0%,
+          #5a1b5e 50%,
+          #3d0f41 100%
+        );
+        padding: 100px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(253, 151, 40, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(253, 151, 40, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease;
+        background: linear-gradient(135deg, #ffffff 0%, #fd9728 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .header-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        animation: fadeInUp 1s ease 0.2s both;
+      }
+
+      .header-description {
+        font-size: 1rem;
+        max-width: 900px;
+        margin: 0 auto;
+        opacity: 0.8;
+        animation: fadeInUp 1s ease 0.4s both;
+      }
+
+      .brand-highlight {
+        color: #fd9728;
+        font-weight: 600;
+      }
+
+      /* Why ORM Matters Section */
+      .why-section {
+        padding: 60px 0;
+        background: linear-gradient(45deg, #3d0f41 0%, #2a0b2e 100%);
+        position: relative;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 80px;
+        position: relative;
+        background: linear-gradient(135deg, #ffffff 0%, #fd9728 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #fd9728, #ffffff);
+        border-radius: 2px;
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        margin-bottom: 60px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(253, 151, 40, 0.1) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border-radius: 25px;
+        border: 1px solid rgba(253, 151, 40, 0.2);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .stat-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(253, 151, 40, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+        border-color: #fd9728;
+      }
+
+      .stat-item:hover::before {
+        left: 100%;
+      }
+
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #fd9728;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .stat-description {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        opacity: 0.9;
+      }
+
+      .customer-question {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fd9728;
+        margin-top: 40px;
+        font-style: italic;
+      }
+
+      /* ORM Process Section */
+      .process-section {
+        padding: 80px 0;
+        background: #3d0f41;
+      }
+
+      .process-intro {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+        margin-top: -30px;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+      }
+
+      .process-item {
+        padding: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.05) 0%,
+          rgba(253, 151, 40, 0.1) 100%
+        );
+        border-radius: 20px;
+        border-left: 4px solid #fd9728;
+        transition: transform 0.3s ease, background 0.3s ease;
+        position: relative;
+      }
+
+      .process-item:hover {
+        transform: translateX(10px);
+        background: linear-gradient(
+          135deg,
+          rgba(253, 151, 40, 0.15) 0%,
+          rgba(255, 255, 255, 0.08) 100%
+        );
+      }
+
+      .process-number {
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        background: linear-gradient(135deg, #fd9728, #ff8c00);
+        color: #3d0f41;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .process-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #fd9728;
+        margin-top: 10px;
+      }
+
+      .process-description {
+        font-size: 0.8rem;
+        line-height: 1.2;
+        opacity: 0.9;
+      }
+
+      /* Services Section */
+      .services-section {
+        padding: 120px 0;
+        background: linear-gradient(45deg, #2a0b2e 0%, #3d0f41 100%);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 50px;
+        margin-top: 80px;
+      }
+
+      .service-item {
+        padding: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(253, 151, 40, 0.1) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border-radius: 25px;
+        border: 1px solid rgba(253, 151, 40, 0.3);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .service-item::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+          from 0deg,
+          transparent,
+          rgba(253, 151, 40, 0.1),
+          transparent
+        );
+        animation: rotate 10s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .service-item:hover::before {
+        opacity: 1;
+      }
+
+      .service-item:hover {
+        transform: translateY(-10px);
+        border-color: #fd9728;
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #fd9728, #ff8c00);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        font-size: 2rem;
+        color: #3d0f41;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #fd9728;
+        position: relative;
+        z-index: 2;
+      }
+
+      .service-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        opacity: 0.9;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Why Choose Section */
+      .choose-section {
+        padding: 120px 0;
+        background: #3d0f41;
+      }
+
+      .choose-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        margin-top: 80px;
+      }
+
+      .choose-text {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-bottom: 50px;
+        opacity: 0.9;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 10px 0;
+      }
+
+      .feature-item i {
+        color: #fd9728;
+        margin-right: 15px;
+        font-size: 1.2rem;
+        width: 20px;
+      }
+
+      .choose-visual {
+        width: 100%;
+        height: 380px;
+        background: linear-gradient(
+          135deg,
+          rgba(253, 151, 40, 0.2) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        color: #fd9728;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .choose-visual::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at center,
+          rgba(253, 151, 40, 0.1) 0%,
+          transparent 70%
+        );
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      /* Advantage Section */
+      .advantage-section {
+        padding: 120px 0;
+        background: linear-gradient(45deg, #2a0b2e 0%, #3d0f41 100%);
+        text-align: center;
+      }
+
+      .advantage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 80px;
+      }
+
+      .advantage-item {
+        text-align: center;
+      }
+
+      .advantage-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #fd9728, #ff8c00);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        font-size: 2.5rem;
+        color: #3d0f41;
+      }
+
+      .advantage-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #fd9728;
+      }
+
+      .advantage-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        opacity: 0.9;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 120px 0;
+        background: linear-gradient(135deg, #3d0f41 0%, #5a1b5e 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 70%,
+            rgba(253, 151, 40, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(253, 151, 40, 0.1) 0%,
+            transparent 50%
+          );
+      }
+
+      .cta-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #ffffff 0%, #fd9728 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-text {
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+        opacity: 0.9;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #fd9728, #ff8c00);
+        color: #3d0f41;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 50px;
+        transition: transform 0.3s ease, background 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(135deg, #ff8c00, #fd9728);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .choose-content {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-title {
+          font-size: 2.3rem;
+        }
+
+        .process-item:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 80px;
+        position: relative;
+        background: linear-gradient(135deg, #ffffff 0%, #fd9728 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(90deg, #fd9728, #ffffff);
+        border-radius: 2px;
+      }
+
+      .brand-highlight {
+        color: #fd9728;
+        font-weight: 600;
+      }
+
+      /* SMM What Is Section */
+      .what-is-section {
+        padding: 80px 0;
+        background: linear-gradient(45deg, #3d0f41 0%, #2a0b2e 100%);
+        position: relative;
+      }
+
+      .smm-intro {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 60px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.9;
+        line-height: 1.8;
+        margin-top: -30px;
+      }
+
+      .smm-benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        padding: 25px;
+        background: linear-gradient(
+          135deg,
+          rgba(253, 151, 40, 0.1) 0%,
+          rgba(255, 255, 255, 0.05) 100%
+        );
+        border-radius: 20px;
+        border: 1px solid rgba(253, 151, 40, 0.2);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .benefit-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(253, 151, 40, 0.1),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .benefit-item:hover {
+        transform: translateY(-8px);
+        border-color: #fd9728;
+      }
+
+      .benefit-item:hover::before {
+        left: 100%;
+      }
+
+      .benefit-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #fd9728, #ff8c00);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        font-size: 1.5rem;
+        color: #3d0f41;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .benefit-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .benefit-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fd9728;
+        margin-bottom: 8px;
+      }
+
+      .benefit-description {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .container {
+          padding: 0 30px;
+        }
+
+        .smm-benefits {
+          gap: 35px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .what-is-section {
+          padding: 60px 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+          margin-bottom: 60px;
+        }
+
+        .smm-intro {
+          font-size: 1rem;
+          margin-bottom: 50px;
+        }
+
+        .smm-benefits {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 30px;
+          margin-top: 50px;
+        }
+
+        .benefit-item {
+          padding: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .what-is-section {
+          padding: 50px 0;
+        }
+
+        .container {
+          padding: 0 20px;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+          margin-bottom: 50px;
+        }
+
+        .section-title::after {
+          width: 80px;
+          height: 3px;
+        }
+
+        .smm-intro {
+          font-size: 0.95rem;
+          margin-bottom: 40px;
+          line-height: 1.7;
+        }
+
+        .smm-benefits {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          margin-top: 40px;
+        }
+
+        .benefit-item {
+          padding: 18px;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .benefit-icon {
+          margin-right: 0;
+          margin-bottom: 15px;
+          width: 45px;
+          height: 45px;
+          font-size: 1.3rem;
+        }
+
+        .benefit-title {
+          font-size: 1rem;
+          margin-bottom: 6px;
+        }
+
+        .benefit-description {
+          font-size: 0.9rem;
+        }
+
+        .benefit-item:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .what-is-section {
+          padding: 40px 0;
+        }
+
+        .container {
+          padding: 0 15px;
+        }
+
+        .section-title {
+          font-size: 1.6rem;
+          margin-bottom: 40px;
+        }
+
+        .smm-intro {
+          font-size: 0.9rem;
+          margin-bottom: 35px;
+        }
+
+        .smm-benefits {
+          gap: 20px;
+          margin-top: 35px;
+        }
+
+        .benefit-item {
+          padding: 15px;
+        }
+
+        .benefit-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+          margin-bottom: 12px;
+        }
+
+        .benefit-title {
+          font-size: 0.95rem;
+        }
+
+        .benefit-description {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .section-title {
+          font-size: 1.4rem;
+        }
+
+        .smm-intro {
+          font-size: 0.85rem;
+        }
+
+        .benefit-item {
+          padding: 12px;
+        }
+
+        .benefit-title {
+          font-size: 0.9rem;
+        }
+
+        .benefit-description {
+          font-size: 0.8rem;
+        }
+      }
+
+      /* Tablet Landscape Specific */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .smm-benefits {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 35px;
+        }
+      }
+
+      /* Large Desktop */
+      @media (min-width: 1400px) {
+        .container {
+          max-width: 1400px;
+        }
+
+        .smm-benefits {
+          gap: 50px;
+        }
+
+        .benefit-item {
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section class="header">
+      <div class="container">
+        <h1>
+          <i class="fas fa-star"></i>E-Mail Marketing Services by Pinakkaa
+        </h1>
+        <div class="header-subtitle">
+          <!-- by <span class="brand-highlight">Pinakkaa</span> -->
+        </div>
+        <p class="header-description">
+          Personalized. Powerful. Performance-Driven. At Pinakkaa, a leading
+          digital marketing agency, we design and execute email marketing
+          campaigns that don’t just reach inboxes—they inspire action. With the
+          right strategy, creativity, and automation, we help brands build
+          stronger customer relationships, drive conversions, and maximize ROI.
+        </p>
+      </div>
+    </section>
+
+    <!-- ORM Process -->
+    <section class="process-section">
+      <div class="container">
+        <h2 class="section-title">What We Offer in E-Mail Marketing</h2>
+        <!-- <p class="process-intro">
+          With <strong>Pinakkaa’s expertise,</strong> your business gets more
+          than just ad placements — you get campaigns designed to
+          <strong>attract, engage, and convert.</strong>
+        </p> -->
+
+        <div class="process-grid">
+          <div class="process-item">
+            <div class="process-number">1</div>
+            <h3 class="process-title">Strategic Campaign Planning</h3>
+            <p class="process-description">
+              Audience segmentation, targeting, and goal-driven campaigns.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">2</div>
+            <h3 class="process-title">Creative Email Design</h3>
+            <p class="process-description">
+              Visually engaging, mobile-responsive, and brand-consistent
+              templates.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">3</div>
+            <h3 class="process-title">Automation & Drip Campaigns</h3>
+            <p class="process-description">
+              Timely, personalized emails triggered by user behavior.
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">4</div>
+            <h3 class="process-title">Content & Copywriting</h3>
+            <p class="process-description">
+              Compelling subject lines and persuasive copy to boost open and
+              click-through rates
+            </p>
+          </div>
+
+          <div class="process-item">
+            <div class="process-number">5</div>
+            <h3 class="process-title">A/B Testing & Optimization</h3>
+            <p class="process-description">
+              Testing subject lines, creatives, and CTA placements for best
+              results.
+            </p>
+          </div>
+          <div class="process-item">
+            <div class="process-number">5</div>
+            <h3 class="process-title">Analytics & Reporting</h3>
+            <p class="process-description">
+              Performance tracking with insights to refine future campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORM Services -->
+    <!-- <section class="services-section">
+      <div class="container">
+        <h2 class="section-title">Platforms We Specialize In</h2>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="service-title">Facebook & Instagram Marketing</h3>
+            <p class="service-description">
+             Creative ads and posts for maximum reach.
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3 class="service-title">LinkedIn Marketing</h3>
+            <p class="service-description">
+              Positioning your brand for B2B success.
+
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 class="service-title">YouTube Marketing</h3>
+            <p class="service-description">
+             Engaging video ads and content strategies.
+
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3 class="service-title">Twitter (X) Marketing</h3>
+            <p class="service-description">
+             Real-time brand conversations.
+
+            </p>
+          </div>
+
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-search-minus"></i>
+            </div>
+            <h3 class="service-title">Pinterest & Snapchat /h3>
+            <p class="service-description">
+              Creative campaigns for niche audiences.
+
+            </p>
+          </div>
+         
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Why Choose Pinakkaa -->
+    <section class="choose-section">
+      <div class="container">
+        <h2 class="section-title">Why Choose Pinakkaa for E-Mail Marketing?</h2>
+        <div class="choose-content">
+          <div>
+            <!-- <p class="choose-text">
+              As a <strong>digital marketing agency, Pinakkaa</strong> goes
+              beyond design — we build experiences. Our focus is not just on how
+              your brand looks, but on how it
+              <strong>feels and connects</strong> with your audience.
+            </p> -->
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Expertise of a trusted digital marketing agency
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Data-driven approach for higher engagement and conversions
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Integration with CRMs, e-commerce, and automation tools
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Proven track record of successful campaigns across industries
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                Dedicated support for continuous growth
+              </div>
+            </div>
+          </div>
+
+          <div class="choose-visual">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pinakkaa Advantage -->
+    <section class="advantage-section">
+      <div class="container">
+        <h2 class="section-title">Benefits of Our E-Mail Marketing Services</h2>
+        <!-- <p
+          style="
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            margin-top: -30px;
+          "
+        >
+          When you partner with  <strong>Pinakkaa,</strong> you don’t just get an SMM service, you get a <strong>growth partner.</strong>
+        </p> -->
+
+        <div class="advantage-grid">
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="advantage-title">
+              Build long-lasting customer relationships
+            </h3>
+            <p class="advantage-description">
+              Build trust and loyalty with lasting customer connections.
+            </p>
+          </div>
+
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="advantage-title">
+              Increase lead nurturing & sales conversions
+            </h3>
+            <p class="advantage-description">
+              Turn more leads into paying customers.
+            </p>
+          </div>
+
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-umbrella"></i>
+            </div>
+            <h3 class="advantage-title">
+              Deliver personalized customer experiences
+            </h3>
+            <p class="advantage-description">
+              Offer tailored experiences for every customer.
+            </p>
+          </div>
+
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-shield"></i>
+            </div>
+            <h3 class="advantage-title">
+              Drive repeat purchases & brand loyalty
+            </h3>
+            <p class="advantage-description">
+              Encourage repeat sales and stronger brand loyalty.
+            </p>
+          </div>
+          <div class="advantage-item">
+            <div class="advantage-icon">
+              <i class="fas fa-shield"></i>
+            </div>
+            <h3 class="advantage-title">
+              Cost-effective, high-ROI digital marketing channel
+            </h3>
+            <p class="advantage-description">
+              Achieve high ROI with affordable digital marketing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 class="cta-title">Connect with Pinakkaa</h2>
+        <p class="cta-text">
+          Turn your emails into powerful growth tools with Pinakkaa’s E-Mail
+          Marketing Services. Whether you’re looking to nurture leads, increase
+          sales, or retain loyal customers — we’ll craft campaigns that truly
+          deliver.
+        </p>
+        <a href="#contact" class="cta-button"
+          >👉 Partner with Pinakkaa, the innovative digital marketing agency,
+          and unlock the full potential of E-Mail Marketing.
+        </a>
+      </div>
+    </section>
+  </body>
+</html>

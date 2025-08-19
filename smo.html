@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Optimization Services - Pinakkaa Digital Marketing Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background: #3D0F41;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3D0F41 0%, #5A1B5E 50%, #3D0F41 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(253, 151, 40, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(253, 151, 40, 0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .header-description {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .brand-highlight {
+            color: #FD9728;
+            font-weight: 600;
+        }
+
+        /* Why SMO Matters Section */
+        .why-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #3D0F41 0%, #2A0B2E 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 80px;
+            position: relative;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #FD9728, #FFFFFF);
+            border-radius: 2px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(253, 151, 40, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(253, 151, 40, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            border-color: #FD9728;
+        }
+
+        .stat-item:hover::before {
+            left: 100%;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FD9728;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .stat-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .customer-question {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FD9728;
+            margin-top: 60px;
+            font-style: italic;
+        }
+
+        /* SMO Process Section */
+        .process-section {
+            padding: 120px 0;
+            background: #3D0F41;
+        }
+
+        .process-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .process-item {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(253, 151, 40, 0.1) 100%);
+            border-radius: 20px;
+            border-left: 4px solid #FD9728;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+        }
+
+        .process-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            color: #3D0F41;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .process-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+            margin-top: 10px;
+        }
+
+        .process-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #2A0B2E 0%, #3D0F41 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .service-item {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(253, 151, 40, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(253, 151, 40, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-item:hover::before {
+            opacity: 1;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            border-color: #FD9728;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: #3D0F41;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Why Choose Section */
+        .choose-section {
+            padding: 120px 0;
+            background: #3D0F41;
+        }
+
+        .choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .choose-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 15px 0;
+        }
+
+        .feature-item i {
+            color: #FD9728;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .choose-visual {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #FD9728;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choose-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(253, 151, 40, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Advantage Section */
+        .advantage-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #2A0B2E 0%, #3D0F41 100%);
+            text-align: center;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .advantage-item {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.5rem;
+            color: #3D0F41;
+        }
+
+        .advantage-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+        }
+
+        .advantage-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #3D0F41 0%, #5A1B5E 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(253, 151, 40, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(253, 151, 40, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            color: #3D0F41;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #FF8C00, #FD9728);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .choose-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 2.3rem;
+            }
+            
+            .process-item:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1><i class="fab fa-facebook-square"></i> Social Media Optimization (SMO) Services</h1>
+            <div class="header-subtitle">by <span class="brand-highlight">Pinakkaa</span></div>
+            <p class="header-description">In today's hyper-connected world, your <strong>social media presence defines your brand identity</strong>. At <strong>Pinakkaa</strong>, a result-driven <strong>digital marketing agency</strong>, we craft tailored SMO strategies that help your business <strong>stand out, engage audiences, and build lasting brand loyalty</strong>.</p>
+        </div>
+    </section>
+
+    <!-- Why SMO Matters -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">🌍 Why Social Media Optimization Matters</h2>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">4.9B</span>
+                    <div class="stat-description">Over <strong>4.9 billion users</strong> are active on social media globally.</div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number">71%</span>
+                    <div class="stat-description">of consumers are more likely to buy from brands they follow online.</div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fas fa-heart"></i></span>
+                    <div class="stat-description">A strong social presence builds <strong>trust, engagement, and brand recall</strong>.</div>
+                </div>
+            </div>
+            
+            <div class="customer-question">
+                Your customers are scrolling every day — <strong>are they stopping for your brand?</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMO Process -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">🛠️ Our SMO Approach at Pinakkaa</h2>
+            <p class="process-intro">We combine <strong>creativity, strategy, and analytics</strong> to maximize your social impact:</p>
+            
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">Profile Optimization</h3>
+                    <p class="process-description">Setting up & optimizing your business pages across platforms (Facebook, Instagram, LinkedIn, Twitter, YouTube, etc.).</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">Content Strategy & Calendar</h3>
+                    <p class="process-description">Curating engaging, share-worthy, and brand-aligned content.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">Creative Storytelling</h3>
+                    <p class="process-description">Designing visuals, reels, videos, and campaigns that capture attention.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">4</div>
+                    <h3 class="process-title">Hashtag & Trend Research</h3>
+                    <p class="process-description">Leveraging trending hashtags, challenges, and formats for better reach.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">5</div>
+                    <h3 class="process-title">Community Engagement</h3>
+                    <p class="process-description">Responding to comments, DMs, and building brand–customer relationships.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">6</div>
+                    <h3 class="process-title">Cross-Platform Integration</h3>
+                    <p class="process-description">Syncing your social channels with your website, blogs, and SEO for maximum visibility.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">7</div>
+                    <h3 class="process-title">Analytics & Performance Tracking</h3>
+                    <p class="process-description">Monitoring insights, engagement metrics, and ROI to refine strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMO Services -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">📊 SMO Services We Offer</h2>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h3 class="service-title">Facebook & Instagram Optimization</h3>
+                    <p class="service-description">Build stronger engagement & conversions through strategic content and community building.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 class="service-title">LinkedIn Optimization</h3>
+                    <p class="service-description">Perfect for B2B lead generation & authority building in professional networks.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3 class="service-title">Twitter (X) Optimization</h3>
+                    <p class="service-description">Drive conversations & brand visibility through trending topics and engagement.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="service-title">YouTube Optimization</h3>
+                    <p class="service-description">Rank higher on video searches & increase subscribers with optimized content.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fab fa-pinterest"></i>
+                    </div>
+                    <h3 class="service-title">Pinterest & Emerging Platforms</h3>
+                    <p class="service-description">Reach niche audiences with visual storytelling and platform-specific strategies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Pinakkaa -->
+    <section class="choose-section">
+        <div class="container">
+            <h2 class="section-title">💡 Why Choose Pinakkaa for SMO?</h2>
+            
+            <div class="choose-content">
+                <div>
+                    <p class="choose-text">As a trusted <strong>digital marketing agency</strong>, Pinakkaa goes beyond just "posting content." We design SMO strategies that <strong>connect, convert, and retain</strong> customers.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Creative + Data-Driven Campaigns
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Platform-Specific Strategies
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Content & Community Management
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Focus on Engagement & Conversions
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Transparent Reporting & Insights
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="choose-visual">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pinakkaa Edge -->
+    <section class="advantage-section">
+        <div class="container">
+            <h2 class="section-title">🌟 The Pinakkaa Edge</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px;">When you partner with <strong>Pinakkaa's SMO experts</strong>, you gain:</p>
+            
+            <div class="advantage-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="advantage-title">Higher Brand Visibility</h3>
+                    <p class="advantage-description">Your brand stays top-of-mind.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3 class="advantage-title">Boosted Engagement</h3>
+                    <p class="advantage-description">More likes, shares, comments & meaningful interactions.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="advantage-title">Qualified Leads</h3>
+                    <p class="advantage-description">Social presence that drives business growth.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="advantage-title">Stronger Brand Identity</h3>
+                    <p class="advantage-description">A consistent and powerful voice across platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">📞 Let's Optimize Your Social Presence</h2>
+            <p class="cta-text">Don't just be on social media — <strong>dominate it</strong>. With <strong>Pinakkaa</strong>, the digital marketing agency that blends creativity with strategy, your brand is ready to <strong>create conversations and conversions</strong>.</p>
+            <a href="#contact" class="cta-button">👉 Contact Us Today to Get Started with SMO!</a>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Services - Pinakkaa Digital Marketing Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background: #3D0F41;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #3D0F41 0%, #5A1B5E 50%, #3D0F41 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(253, 151, 40, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(253, 151, 40, 0.1) 0%, transparent 50%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .header-description {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .brand-highlight {
+            color: #FD9728;
+            font-weight: 600;
+        }
+
+        /* Why SEO Matters Section */
+        .why-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #3D0F41 0%, #2A0B2E 100%);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 80px;
+            position: relative;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #FD9728, #FFFFFF);
+            border-radius: 2px;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(253, 151, 40, 0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(253, 151, 40, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            border-color: #FD9728;
+        }
+
+        .stat-item:hover::before {
+            left: 100%;
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FD9728;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .stat-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .customer-question {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FD9728;
+            margin-top: 60px;
+            font-style: italic;
+        }
+
+        /* SEO Process Section */
+        .process-section {
+            padding: 120px 0;
+            background: #3D0F41;
+        }
+
+        .process-intro {
+            text-align: center;
+            font-size: 1.3rem;
+            margin-bottom: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .process-item {
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(253, 151, 40, 0.1) 100%);
+            border-radius: 20px;
+            border-left: 4px solid #FD9728;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+        }
+
+        .process-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+        }
+
+        .process-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            color: #3D0F41;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .process-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+            margin-top: 10px;
+        }
+
+        .process-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #2A0B2E 0%, #3D0F41 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 80px;
+        }
+
+        .service-item {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 25px;
+            border: 1px solid rgba(253, 151, 40, 0.3);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(253, 151, 40, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-item:hover::before {
+            opacity: 1;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            border-color: #FD9728;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: #3D0F41;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Why Choose Section */
+        .choose-section {
+            padding: 120px 0;
+            background: #3D0F41;
+        }
+
+        .choose-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        .choose-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 15px 0;
+        }
+
+        .feature-item i {
+            color: #FD9728;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .choose-visual {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, rgba(253, 151, 40, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #FD9728;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choose-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(253, 151, 40, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Advantage Section */
+        .advantage-section {
+            padding: 120px 0;
+            background: linear-gradient(45deg, #2A0B2E 0%, #3D0F41 100%);
+            text-align: center;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            margin-top: 80px;
+        }
+
+        .advantage-item {
+            text-align: center;
+        }
+
+        .advantage-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.5rem;
+            color: #3D0F41;
+        }
+
+        .advantage-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #FD9728;
+        }
+
+        .advantage-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #3D0F41 0%, #5A1B5E 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(253, 151, 40, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(253, 151, 40, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #FD9728 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #FD9728, #FF8C00);
+            color: #3D0F41;
+            padding: 20px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease, background 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #FF8C00, #FD9728);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .choose-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 2.3rem;
+            }
+            
+            .process-item:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="container">
+            <h1><i class="fas fa-search"></i> Search Engine Optimization (SEO) Services</h1>
+            <div class="header-subtitle">by <span class="brand-highlight">Pinakkaa</span></div>
+            <p class="header-description">In today's digital-first world, <strong>visibility is everything</strong>. At <strong>Pinakkaa</strong>, a full-service <strong>digital marketing agency</strong>, we specialize in <strong>SEO strategies that put your business on top of search results</strong> — and keep it there. From boosting organic traffic to generating qualified leads, our SEO services are designed to fuel your business growth.</p>
+        </div>
+    </section>
+
+    <!-- Why SEO Matters -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">🚀 Why SEO Matters for Your Business</h2>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">93%</span>
+                    <div class="stat-description">of <strong>online experiences</strong> begin with a search engine.</div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number">70%</span>
+                    <div class="stat-description">Businesses on the <strong>first page of Google</strong> capture over 70% of clicks.</div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fas fa-chart-line"></i></span>
+                    <div class="stat-description">SEO delivers <strong>long-term ROI</strong> compared to paid ads.</div>
+                </div>
+                
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fas fa-shield-alt"></i></span>
+                    <div class="stat-description">Strong organic visibility builds <strong>trust and authority</strong> in your industry.</div>
+                </div>
+            </div>
+            
+            <div class="customer-question">
+                Your customers are searching. <strong>Will they find you or your competitor?</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Process -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">🛠️ Our SEO Process at Pinakkaa</h2>
+            <p class="process-intro">At Pinakkaa, we follow a <strong>data-driven and ROI-focused SEO framework</strong>:</p>
+            
+            <div class="process-grid">
+                <div class="process-item">
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">SEO Audit & Analysis</h3>
+                    <p class="process-description">In-depth site audit to identify technical issues, ranking gaps, and opportunities.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">Keyword Research & Strategy</h3>
+                    <p class="process-description">Targeting high-intent, high-value keywords your customers are searching for.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">On-Page Optimization</h3>
+                    <p class="process-description">Optimizing meta tags, content, images, and internal linking for maximum visibility.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">4</div>
+                    <h3 class="process-title">Content Strategy</h3>
+                    <p class="process-description">Creating SEO-rich blogs, landing pages, and web content that ranks and converts.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">5</div>
+                    <h3 class="process-title">Technical SEO</h3>
+                    <p class="process-description">Enhancing website speed, mobile responsiveness, indexing, and crawlability.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">6</div>
+                    <h3 class="process-title">Off-Page Optimization</h3>
+                    <p class="process-description">Building authority with quality backlinks, citations, and digital PR.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">7</div>
+                    <h3 class="process-title">Local SEO</h3>
+                    <p class="process-description">Optimizing for Google My Business & local searches to drive nearby customers.</p>
+                </div>
+                
+                <div class="process-item">
+                    <div class="process-number">8</div>
+                    <h3 class="process-title">Performance Tracking & Reporting</h3>
+                    <p class="process-description">Transparent reporting with keyword rankings, traffic growth, and ROI insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Services -->
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">📊 SEO Services We Offer</h2>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="service-title">Local SEO</h3>
+                    <p class="service-description">Boost visibility in your city and attract nearby customers.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-Commerce SEO</h3>
+                    <p class="service-description">Optimize your store for higher product rankings and sales.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">Enterprise SEO</h3>
+                    <p class="service-description">Large-scale strategies for big brands with complex needs.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Technical SEO</h3>
+                    <p class="service-description">Site architecture, speed optimization, and mobile-first design.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3 class="service-title">Content SEO</h3>
+                    <p class="service-description">Blogs, articles, and landing pages that rank & engage.</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3 class="service-title">Voice Search Optimization</h3>
+                    <p class="service-description">Future-ready SEO for the voice-driven search era.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Pinakkaa -->
+    <section class="choose-section">
+        <div class="container">
+            <h2 class="section-title">💡 Why Choose Pinakkaa for SEO?</h2>
+            
+            <div class="choose-content">
+                <div>
+                    <p class="choose-text">As a <strong>digital marketing agency</strong>, Pinakkaa brings the advantage of <strong>SEO + Marketing synergy</strong>. We don't just rank you higher — we ensure rankings turn into <strong>conversions, leads, and revenue</strong>.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            100% White-Hat SEO Practices
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Tailored Strategies for Your Industry
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            End-to-End SEO + Content + Analytics
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            Transparent Reporting & Optimization
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="choose-visual">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pinakkaa Advantage -->
+    <section class="advantage-section">
+        <div class="container">
+            <h2 class="section-title">🌟 The Pinakkaa Advantage</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px;">When you choose <strong>Pinakkaa's SEO services</strong>, you're not just getting rankings — you're getting:</p>
+            
+            <div class="advantage-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="advantage-title">Sustainable Growth</h3>
+                    <p class="advantage-description">Strategies designed for long-term success.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="advantage-title">More Qualified Leads</h3>
+                    <p class="advantage-description">Targeting the right audience at the right time.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="advantage-title">Competitive Edge</h3>
+                    <p class="advantage-description">Outrank competitors with smarter SEO.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="advantage-title">Brand Authority</h3>
+                    <p class="advantage-description">Build credibility and trust in your market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">📞 Ready to Rank Higher?</h2>
+            <p class="cta-text">Stop being invisible online. Let <strong>Pinakkaa</strong>, the trusted <strong>digital marketing agency</strong>, help your business dominate search engines and attract the customers you deserve.</p>
+            <a href="#contact" class="cta-button">👉 Contact Us Today to Kickstart Your SEO Journey!</a>
+        </div>
+    </section>
+</body>
+</html>
